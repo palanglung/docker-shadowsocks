@@ -6,7 +6,6 @@ ADD https://github.com/shadowsocks/shadowsocks-go/releases/download/${version}/s
 RUN tar -xvzf /tmp/shadowsocks-server.tar.gz -C /bin/
 
 EXPOSE 5555
-EXPOSE 5555/udp
 
 # Configure container to run as an executable
-ENTRYPOINT ["/bin/shadowsocks-server", "-p", "5555", "-k" , "${SS_PASSWORD}", "-u"]
+ENTRYPOINT ["/bin/shadowsocks-server", "-p", "5555", "-k" , "${SS_PASSWORD}"]
